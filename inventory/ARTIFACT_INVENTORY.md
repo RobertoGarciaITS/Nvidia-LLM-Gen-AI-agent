@@ -1,0 +1,34 @@
+# Artifact Inventory
+
+**Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
+**Version:** 0.1  
+**Status:** ACTIVE
+
+## Status vocabulary
+`PLANNED` · `DRAFT` · `ACTIVE` · `VALIDATED` · `SUPERSEDED` · `ARCHIVED` · `TO_CONSOLIDATE`
+
+## Initial inventory
+
+| ID | Artifact / topic | Type | Status | Target |
+|---|---|---|---|---|
+| INV-001 | Repository bootstrap | governance | ACTIVE | root + governance/ |
+| INV-002 | NemoClaw course learning framework | learning | TO_CONSOLIDATE | docs/nemoclaw/ |
+| INV-003 | NemoClaw 01a Agent Loop | lesson | TO_CONSOLIDATE | docs/nemoclaw/ |
+| INV-004 | Agent workflow anatomy | guide | TO_CONSOLIDATE | docs/agents/ |
+| INV-005 | NemoClaw / OpenClaw definitions | reference | TO_CONSOLIDATE | docs/nemoclaw/ |
+| INV-006 | NVIDIA vs Gemini ADK equivalents | comparison | TO_CONSOLIDATE | docs/comparisons/ |
+| INV-007 | Google Colab capability boundary | guide | TO_CONSOLIDATE | docs/labs/ |
+| INV-008 | Master NemoClaw lesson prompt template | prompt-contract | TO_CONSOLIDATE | governance/templates/ |
+| INV-009 | RAG topic map for NVIDIA/NeMoClaw | learning | TO_CONSOLIDATE | docs/rag/ |
+| INV-010 | Certification learning roadmap | certification | ACTIVE | docs/LEARNING_ROADMAP.md |
+| INV-011 | Agent configuration lab framework | lab | ACTIVE | labs/README.md |
+| INV-012 | Source registry | governance | ACTIVE | references/SOURCE_REGISTRY.md |
+| INV-013 | Agent context contract | governance | ACTIVE | AGENTS.md |
+| INV-014 | Repository rules | governance | ACTIVE | governance/REPOSITORY_RULES.md |
+| INV-015 | Documentation lifecycle | governance | ACTIVE | governance/DOCUMENTATION_LIFECYCLE.md |
+
+## Historical knowledge migration queue
+Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.
+
+## Rule
+Every added artifact, status promotion, supersession or archival action updates this registry.
