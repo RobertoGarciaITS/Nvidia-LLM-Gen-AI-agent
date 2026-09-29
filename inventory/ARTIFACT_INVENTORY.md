@@ -26,6 +26,7 @@
 | INV-013 | Agent context contract | governance | ACTIVE | AGENTS.md |
 | INV-014 | Repository rules | governance | ACTIVE | governance/REPOSITORY_RULES.md |
 | INV-015 | Documentation lifecycle | governance | ACTIVE | governance/DOCUMENTATION_LIFECYCLE.md |
+| INV-016 | NemoClaw course setup preflight | governance | ACTIVE | governance/NEMOCLAW_COURSE_SETUP_PREFLIGHT_v0.1.md |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.
