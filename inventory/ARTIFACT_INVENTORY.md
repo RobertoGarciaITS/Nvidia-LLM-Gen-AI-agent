@@ -27,6 +27,9 @@
 | INV-014 | Repository rules | governance | ACTIVE | governance/REPOSITORY_RULES.md |
 | INV-015 | Documentation lifecycle | governance | ACTIVE | governance/DOCUMENTATION_LIFECYCLE.md |
 
+| INV-016 | NVIDIA Voice RAG reference architecture | architecture | DRAFT | docs/rag/NVIDIA_VOICE_RAG_REFERENCE_ARCHITECTURE_v0.1.md |
+| INV-017 | Voice RAG ↔ NemoClaw/OpenClaw/OpenShell mapping | comparison | DRAFT | docs/comparisons/NVIDIA_VOICE_RAG_NEMOCLAW_MAPPING_v0.1.md |
+
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.
 
