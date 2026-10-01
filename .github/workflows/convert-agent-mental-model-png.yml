@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - ".github/workflows/convert-agent-mental-model-png.yml"
+      - "docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.webp"
+      - "docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp"
 
 permissions:
   contents: write
