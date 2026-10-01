@@ -1,0 +1,84 @@
+schema_version: "0.2"
+
+artifact:
+  id: NVIDIA-AGENT-MENTAL-MODEL-VECTOR-SOURCE-CANDIDATE-001
+  candidate_version: v0.2
+  status: DRAFT
+  review_state: REVIEW_REQUIRED
+  canonical_editable_source: false
+
+baseline:
+  mental_model_version: v0.2
+  raster_master: AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png
+  resolution:
+    width: 2048
+    height: 1364
+  aspect_ratio_policy: LOCKED
+
+candidate:
+  file: AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.2.svg
+  parent_candidate: AGENT_MENTAL_MODEL_v0.2_source_candidate.svg
+  mode: HYBRID_RASTER_VECTOR
+  canvas:
+    width: 2048
+    height: 1364
+  visible_source_layer:
+    id: L-000-baseline-raster
+    status: LOCKED_EXCEPT_AUTHORIZED_MASK
+  editable_vector_layer:
+    id: L-100-editable-vector
+    status: PARTIAL
+
+migration:
+  change_request: CR-VECTOR-001
+  component:
+    id: CMP-050
+    name: agent_core
+    status: MIGRATED_PARTIAL
+  authorized_region:
+    x: 351
+    y: 492
+    width: 724
+    height: 282
+    corner_radius: 22
+  vectorized:
+    - outer_panel
+    - title
+    - subtitle
+    - description
+    - planning_card
+    - state_card
+    - tools_card
+    - card_text
+  raster_preserved:
+    - robot_icon
+  untouched_components:
+    - CMP-010
+    - CMP-020
+    - CMP-030
+    - CMP-040
+    - CMP-060
+    - CMP-070
+    - CMP-080
+    - CMP-090
+    - CMP-100
+    - CMP-110
+    - CMP-120
+
+validation:
+  render_engine: inkscape
+  render_resolution: 2048x1364
+  full_mae: 1.7137
+  full_changed_pixel_pct: 7.8323
+  cmp_050_mae: 21.2375
+  cmp_050_changed_pixel_pct: 92.5806
+  outside_cmp_050_mae: 0.1743
+  outside_cmp_050_changed_pixel_pct: 1.1498
+  structural_gate: PASS_SCOPE_LIMITED
+  semantic_gate: REVIEW_REQUIRED
+  visual_gate: REVIEW_REQUIRED
+  editability_gate: PARTIAL_PASS
+
+promotion:
+  current_decision: NOT_CANONICAL
+  next_required_action: refine_cmp_050_and_validate_exact_text_typography_geometry

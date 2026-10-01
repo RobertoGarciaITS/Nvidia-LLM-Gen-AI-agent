@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.8  
+**Version:** 0.9  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -34,7 +34,9 @@
 | INV-021 | Visual resolution standard | governance-standard | ACTIVE | governance/VISUAL_RESOLUTION_STANDARD_v0.1.md + docs/agents/assets/README.md |
 | INV-022 | Agent mental model raster rendition pipeline | ci-pipeline | ACTIVE | .github/workflows/convert-agent-mental-model-png.yml |
 | INV-023 | Vector source migration contract | governance-contract | ACTIVE | governance/VECTOR_SOURCE_MIGRATION_CONTRACT_v0.1.md |
-| INV-024 | Agent mental model SVG source candidate + manifest | visual-source-candidate | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.1.yaml |
+| INV-024 | Agent mental model SVG source candidate + manifest | visual-source-candidate | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.1.yaml + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.2.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.2.yaml |
+| INV-025 | CR-VECTOR-001 CMP-050 AI Agent core migration | change-request | REVIEW_REQUIRED | governance/change_requests/CR-VECTOR-001_CMP-050_AGENT_CORE_v0.1.md |
+| INV-026 | CR-VECTOR-001 vector migration validation report | validation-report | REVIEW_REQUIRED | docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.

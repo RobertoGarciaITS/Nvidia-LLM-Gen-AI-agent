@@ -87,3 +87,21 @@ See:
 
 - governance/VECTOR_SOURCE_MIGRATION_CONTRACT_v0.1.md
 - AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.1.yaml
+
+### CR-VECTOR-001 — first real editable component
+
+Candidate v0.2 migrates CMP-050 AI Agent core as a hybrid raster/vector SVG:
+
+- outer panel is editable SVG;
+- title, subtitle, description and internal cards are editable SVG;
+- robot icon remains raster-preserved;
+- all other components remain locked to the raster baseline.
+
+Status: REVIEW_REQUIRED. The candidate is not canonical.
+
+Files:
+
+- AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.2.svg
+- AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.2.yaml
+- governance/change_requests/CR-VECTOR-001_CMP-050_AGENT_CORE_v0.1.md
+- docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md
