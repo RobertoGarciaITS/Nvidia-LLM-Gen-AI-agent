@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.6  
+**Version:** 0.7  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -28,10 +28,11 @@
 | INV-015 | Documentation lifecycle | governance | ACTIVE | governance/DOCUMENTATION_LIFECYCLE.md |
 | INV-016 | NemoClaw course setup preflight | governance | ACTIVE | governance/NEMOCLAW_COURSE_SETUP_PREFLIGHT_v0.1.md |
 | INV-017 | Agent mental model contract | governance-contract | ACTIVE | governance/AGENT_MENTAL_MODEL_CONTRACT_v0.1.md |
-| INV-018 | Agent mental model visual + explanation | learning-artifact | DRAFT | docs/agents/AGENT_MENTAL_MODEL_v0.1.md + assets/AGENT_MENTAL_MODEL_v0.1.webp + assets/AGENT_MENTAL_MODEL_v0.1.png |
+| INV-018 | Agent mental model visual + explanation | learning-artifact | DRAFT | docs/agents/AGENT_MENTAL_MODEL_v0.1.md + assets/AGENT_MENTAL_MODEL_v0.1.webp + assets/AGENT_MENTAL_MODEL_v0.1.png + assets/AGENT_MENTAL_MODEL_v0.1_doc_1024x682.png + assets/AGENT_MENTAL_MODEL_v0.1_master_2048x1364.png |
 | INV-019 | Strict baseline image V2 execution contract | governance-contract | ACTIVE | governance/STRICT_BASELINE_IMAGE_V2_EXECUTION_CONTRACT_v0.1.md |
-| INV-020 | Agent mental model visual v0.2 — strict derivative of v0.1 | visual-artifact | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png |
+| INV-020 | Agent mental model visual v0.2 — strict derivative of v0.1 | visual-artifact | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_doc_1024x682.png + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png |
 | INV-021 | Visual resolution standard | governance-standard | ACTIVE | governance/VISUAL_RESOLUTION_STANDARD_v0.1.md + docs/agents/assets/README.md |
+| INV-022 | Agent mental model raster rendition pipeline | ci-pipeline | ACTIVE | .github/workflows/convert-agent-mental-model-png.yml |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.

@@ -131,3 +131,20 @@ Before accepting a derived rendition:
 ## 9. Canonical recommendation
 
 > Keep **512 × 341** as the lightweight preview baseline, use **1024 × 682** for documentation, and establish **2048 × 1364** as the recommended PNG master resolution. Prefer a future native/vector render for the true master; do not use generative AI upscaling as the canonical conversion path.
+
+## 10. Implementation status
+
+The recommended raster profiles are now implemented for both V1 and V2.
+
+| Version | Preview | Documentation | Master |
+|---|---|---|---|
+| v0.1 | 512 × 341 PNG/WebP | 1024 × 682 PNG | 2048 × 1364 PNG |
+| v0.2 | 512 × 341 PNG/WebP | 1024 × 682 PNG | 2048 × 1364 PNG |
+
+Generation is automated by:
+
+`.github/workflows/convert-agent-mental-model-png.yml`
+
+The workflow uses explicit deterministic Lanczos scaling for the 2× and 4× raster renditions and validates exact dimensions before committing outputs.
+
+The current master files are **recommended master raster renditions**, not native high-resolution sources. Their lineage remains the 512 × 341 canonical raster baseline until an approved editable/vector source is introduced.
