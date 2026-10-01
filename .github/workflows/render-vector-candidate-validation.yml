@@ -19,26 +19,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Inkscape
+      - name: Install Inkscape and ImageMagick
         run: |
           sudo apt-get update
-          sudo apt-get install -y inkscape
+          sudo apt-get install -y inkscape imagemagick
 
       - name: Render SVG candidate
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p docs/agents/validation/images
-          inkscape             docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3.svg             --export-type=png             --export-filename=docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png             --export-width=2048             --export-height=1364
+          inkscape docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3.svg --export-type=png --export-filename=docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png --export-width=2048 --export-height=1364
           test -s docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png
 
       - name: Verify dimensions
         shell: bash
         run: |
           set -euo pipefail
-          file docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png
-          identify -format '%wx%h
-' docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png | grep '^2048x1364$'
+          actual="$(identify -format '%wx%h' docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png)"
+          echo "render dimensions: $actual"
+          test "$actual" = "2048x1364"
 
       - name: Commit render
         shell: bash
