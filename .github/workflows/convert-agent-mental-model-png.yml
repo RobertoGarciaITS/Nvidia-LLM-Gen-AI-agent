@@ -1,0 +1,67 @@
+name: Convert agent mental model WebP to PNG
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/convert-agent-mental-model-png.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: |
+          if ! command -v magick >/dev/null 2>&1 && ! command -v convert >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y imagemagick
+          fi
+
+      - name: Convert canonical WebP assets to PNG
+        shell: bash
+        run: |
+          set -euo pipefail
+          for version in v0.1 v0.2; do
+            src="docs/agents/assets/AGENT_MENTAL_MODEL_${version}.webp"
+            dst="docs/agents/assets/AGENT_MENTAL_MODEL_${version}.png"
+
+            test -f "$src"
+
+            if command -v magick >/dev/null 2>&1; then
+              magick "$src" "$dst"
+            else
+              convert "$src" "$dst"
+            fi
+
+            test -s "$dst"
+          done
+
+      - name: Verify generated images
+        shell: bash
+        run: |
+          set -euo pipefail
+          identify docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.png
+          identify docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png
+
+      - name: Commit PNG renditions
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png
+
+          if git diff --cached --quiet; then
+            echo "PNG renditions are already current."
+            exit 0
+          fi
+
+          git commit -m "docs: add PNG renditions of agent mental model visuals"
+          git push
