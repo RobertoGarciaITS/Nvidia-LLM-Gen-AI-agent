@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.1  
+**Version:** 0.2  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -27,6 +27,8 @@
 | INV-014 | Repository rules | governance | ACTIVE | governance/REPOSITORY_RULES.md |
 | INV-015 | Documentation lifecycle | governance | ACTIVE | governance/DOCUMENTATION_LIFECYCLE.md |
 | INV-016 | NemoClaw course setup preflight | governance | ACTIVE | governance/NEMOCLAW_COURSE_SETUP_PREFLIGHT_v0.1.md |
+| INV-017 | Agent mental model contract | governance-contract | ACTIVE | governance/AGENT_MENTAL_MODEL_CONTRACT_v0.1.md |
+| INV-018 | Agent mental model visual + explanation | learning-artifact | DRAFT | docs/agents/AGENT_MENTAL_MODEL_v0.1.md + assets/AGENT_MENTAL_MODEL_v0.1.webp |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.
