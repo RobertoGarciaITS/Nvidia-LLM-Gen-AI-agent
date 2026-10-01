@@ -15,7 +15,7 @@ docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png
 
 as the current controlled visual baseline for the Agent Mental Model.
 
-The previous v0.2 baseline is retained as historical evidence and lineage context.
+The previous v0.2 baseline is retained as historical evidence and lineage context in Git history and validation documentation, but is no longer present in the active visual-assets tree.
 
 ## 2. Promotion type
 
@@ -102,15 +102,13 @@ PREVIOUS_BASELINE       = v0.2
 
 ## 7. Historical preservation
 
-The following v0.2 assets remain in the repository and MUST NOT be deleted:
+V0.2 visual files and SVG experiments have been retired from the active tree because they are obsolete and insufficiently legible.
 
-- AGENT_MENTAL_MODEL_v0.2.webp
-- AGENT_MENTAL_MODEL_v0.2.png
-- AGENT_MENTAL_MODEL_v0.2_doc_1024x682.png
-- AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png
-- v0.2 SVG/vector migration experiments and validation evidence
+Auditability is preserved through Git history, validation reports, comparison records and:
 
-They remain necessary for auditability and lineage.
+`governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md`
+
+The active assets directory MUST NOT present V0.2 as a usable current visual source.
 
 ## 8. Future derivation rule
 

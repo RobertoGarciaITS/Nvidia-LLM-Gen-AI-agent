@@ -1,4 +1,4 @@
-name: Build agent mental model raster renditions
+name: Build legacy v0.1 agent mental model raster renditions
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
     paths:
       - ".github/workflows/convert-agent-mental-model-png.yml"
       - "docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.webp"
-      - "docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp"
 
 permissions:
   contents: write
@@ -26,77 +25,43 @@ jobs:
             sudo apt-get install -y imagemagick
           fi
 
-      - name: Render canonical PNG profiles
+      - name: Render v0.1 raster profiles
         shell: bash
         run: |
           set -euo pipefail
 
-          render() {
-            local src="$1"
-            local dst="$2"
-            shift 2
+          src="docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.webp"
+          preview="docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.png"
+          doc="docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_doc_1024x682.png"
+          master="docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_master_2048x1364.png"
 
-            if command -v magick >/dev/null 2>&1; then
-              magick "$src" "$@" "$dst"
-            else
-              convert "$src" "$@" "$dst"
-            fi
-          }
+          if command -v magick >/dev/null 2>&1; then
+            magick "$src" "$preview"
+            magick "$src" -filter Lanczos -resize 1024x682 "$doc"
+            magick "$src" -filter Lanczos -resize 2048x1364 "$master"
+          else
+            convert "$src" "$preview"
+            convert "$src" -filter Lanczos -resize 1024x682 "$doc"
+            convert "$src" -filter Lanczos -resize 2048x1364 "$master"
+          fi
 
-          for version in v0.1 v0.2; do
-            src="docs/agents/assets/AGENT_MENTAL_MODEL_${version}.webp"
-            preview="docs/agents/assets/AGENT_MENTAL_MODEL_${version}.png"
-            doc="docs/agents/assets/AGENT_MENTAL_MODEL_${version}_doc_1024x682.png"
-            master="docs/agents/assets/AGENT_MENTAL_MODEL_${version}_master_2048x1364.png"
+          test "$(identify -format '%wx%h' "$preview")" = "512x341"
+          test "$(identify -format '%wx%h' "$doc")" = "1024x682"
+          test "$(identify -format '%wx%h' "$master")" = "2048x1364"
 
-            test -f "$src"
-
-            # Preview: direct format conversion at the canonical 512 x 341 raster baseline.
-            render "$src" "$preview"
-
-            # Documentation and master: deterministic raster scaling.
-            # Lanczos is explicit and reproducible; no crop, generative fill or semantic edit.
-            render "$src" "$doc" -filter Lanczos -resize 1024x682
-            render "$src" "$master" -filter Lanczos -resize 2048x1364
-
-            test -s "$preview"
-            test -s "$doc"
-            test -s "$master"
-          done
-
-      - name: Verify exact dimensions
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          assert_dimensions() {
-            local file="$1"
-            local expected="$2"
-            local actual
-            actual="$(identify -format '%wx%h' "$file")"
-            echo "$file -> $actual"
-            test "$actual" = "$expected"
-          }
-
-          for version in v0.1 v0.2; do
-            assert_dimensions "docs/agents/assets/AGENT_MENTAL_MODEL_${version}.png" "512x341"
-            assert_dimensions "docs/agents/assets/AGENT_MENTAL_MODEL_${version}_doc_1024x682.png" "1024x682"
-            assert_dimensions "docs/agents/assets/AGENT_MENTAL_MODEL_${version}_master_2048x1364.png" "2048x1364"
-          done
-
-      - name: Commit raster renditions
+      - name: Commit v0.1 renditions
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_doc_1024x682.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_master_2048x1364.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_doc_1024x682.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png
+          git add             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_doc_1024x682.png             docs/agents/assets/AGENT_MENTAL_MODEL_v0.1_master_2048x1364.png
 
           if git diff --cached --quiet; then
-            echo "Raster renditions are already current."
+            echo "V0.1 renditions are already current."
             exit 0
           fi
 
-          git commit -m "docs: generate documented and master PNG renditions"
+          git commit -m "docs: refresh legacy v0.1 raster renditions"
           git push

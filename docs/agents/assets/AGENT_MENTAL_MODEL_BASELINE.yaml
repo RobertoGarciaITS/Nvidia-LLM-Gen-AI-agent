@@ -1,4 +1,4 @@
-schema_version: "0.1"
+schema_version: "0.2"
 
 current_visual_baseline:
   version: "v0.3"
@@ -14,10 +14,14 @@ current_visual_baseline:
   promotion_type: CONTROLLED_REBASELINE
   previous_baseline:
     version: "v0.2"
-    file: "AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+    status: ARCHIVED
+    active_tree: false
+    recovery_commit: "76b4ff6361bd8e3e6c5f24aad6fab092facddca6"
+    retirement_record: "governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md"
   source_candidate:
     file: "AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png"
     resolution: "1537x1023"
+    status: SUPERSEDED
   normalization:
     operation: "crop_right_edge"
     pixels_removed: 1
@@ -32,5 +36,6 @@ current_visual_baseline:
     strict_v02_pixel_lineage: NOT_CLAIMED
   governance:
     promotion_record: "governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md"
+    retirement_record: "governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md"
     semantic_contract: "governance/AGENT_MENTAL_MODEL_CONTRACT_v0.1.md"
     resolution_standard: "governance/VISUAL_RESOLUTION_STANDARD_v0.1.md"

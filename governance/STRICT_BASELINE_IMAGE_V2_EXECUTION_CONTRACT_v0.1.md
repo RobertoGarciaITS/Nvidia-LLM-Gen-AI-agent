@@ -1,3 +1,5 @@
+> **ARCHIVAL NOTICE:** This V2-specific execution contract is historical. Do not use it for new visual work. The current controlled visual baseline is V0.3.
+
 # STRICT BASELINE IMAGE V2 EXECUTION CONTRACT
 
 **ID:** NVIDIA-VISUAL-V2-EXECUTION-CONTRACT-001\

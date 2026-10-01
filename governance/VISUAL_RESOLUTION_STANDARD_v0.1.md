@@ -139,7 +139,7 @@ The recommended raster profiles are now implemented for both V1 and V2.
 | Version | Preview | Documentation | Master |
 |---|---|---|---|
 | v0.1 | 512 × 341 PNG/WebP | 1024 × 682 PNG | 2048 × 1364 PNG |
-| v0.2 | 512 × 341 PNG/WebP | 1024 × 682 PNG | 2048 × 1364 PNG |
+| v0.2 | ARCHIVED | ARCHIVED | ARCHIVED |
 
 Generation is automated by:
 
@@ -175,3 +175,15 @@ The v0.3 baseline was produced through a controlled re-baseline decision and a d
 The previous rule prohibiting crop remains the default for strict derivatives. The one-pixel crop used for baseline normalization is an explicitly authorized exception documented in:
 
 `governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md`
+
+### V0.2 retirement
+
+V0.2 raster and vector visual assets are no longer present in the active assets tree. They are preserved through Git history only.
+
+Current baseline:
+
+`AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png`
+
+Historical V0.2 recovery is governed by:
+
+`governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md`

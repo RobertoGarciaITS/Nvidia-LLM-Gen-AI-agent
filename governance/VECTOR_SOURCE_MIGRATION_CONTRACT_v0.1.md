@@ -1,8 +1,10 @@
+> **ARCHIVAL NOTICE:** This contract documents the retired V0.2 vector-migration experiment. Its V0.2 source files are no longer in the active tree. Use the current V0.3 baseline for future visual work.
+
 # Vector Source Migration Contract
 
 **ID:** NVIDIA-VECTOR-SOURCE-MIGRATION-CONTRACT-001  
 **Version:** 0.1  
-**Status:** ACTIVE  
+**Status:** ARCHIVED  
 **Scope:** Agent Mental Model visual family
 
 ## 1. Purpose

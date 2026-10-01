@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.14  
+**Version:** 0.15  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -29,20 +29,21 @@
 | INV-016 | NemoClaw course setup preflight | governance | ACTIVE | governance/NEMOCLAW_COURSE_SETUP_PREFLIGHT_v0.1.md |
 | INV-017 | Agent mental model contract | governance-contract | ACTIVE | governance/AGENT_MENTAL_MODEL_CONTRACT_v0.1.md |
 | INV-018 | Agent mental model visual + explanation | learning-artifact | DRAFT | docs/agents/AGENT_MENTAL_MODEL_v0.1.md + assets/AGENT_MENTAL_MODEL_v0.1.webp + assets/AGENT_MENTAL_MODEL_v0.1.png + assets/AGENT_MENTAL_MODEL_v0.1_doc_1024x682.png + assets/AGENT_MENTAL_MODEL_v0.1_master_2048x1364.png |
-| INV-019 | Strict baseline image V2 execution contract | governance-contract | ACTIVE | governance/STRICT_BASELINE_IMAGE_V2_EXECUTION_CONTRACT_v0.1.md |
-| INV-020 | Agent mental model visual v0.2 — strict derivative of v0.1 | visual-artifact | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_doc_1024x682.png + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png |
+| INV-019 | Strict baseline image V2 execution contract | governance-contract | ARCHIVED | governance/STRICT_BASELINE_IMAGE_V2_EXECUTION_CONTRACT_v0.1.md |
+| INV-020 | Agent mental model visual v0.2 — retired unreadable visual set | visual-artifact | ARCHIVED | Git history; see governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md |
 | INV-021 | Visual resolution standard | governance-standard | ACTIVE | governance/VISUAL_RESOLUTION_STANDARD_v0.1.md + docs/agents/assets/README.md |
 | INV-022 | Agent mental model raster rendition pipeline | ci-pipeline | ACTIVE | .github/workflows/convert-agent-mental-model-png.yml |
-| INV-023 | Vector source migration contract | governance-contract | ACTIVE | governance/VECTOR_SOURCE_MIGRATION_CONTRACT_v0.1.md |
-| INV-024 | Agent mental model SVG source candidate + manifest | visual-source-candidate | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.1.yaml + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.2.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.2.yaml + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3.svg + docs/agents/assets/AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.3.yaml |
-| INV-025 | CR-VECTOR-001 CMP-050 AI Agent core migration | change-request | DRAFT | governance/change_requests/CR-VECTOR-001_CMP-050_AGENT_CORE_v0.1.md |
-| INV-026 | CR-VECTOR-001 vector migration validation report | validation-report | DRAFT | docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md + docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.2.md + docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png |
-| INV-027 | Vector candidate validation render pipeline | ci-pipeline | ACTIVE | .github/workflows/render-vector-candidate-validation.yml |
+| INV-023 | Vector source migration contract | governance-contract | ARCHIVED | governance/VECTOR_SOURCE_MIGRATION_CONTRACT_v0.1.md |
+| INV-024 | Retired V0.2 SVG source candidates and manifests | visual-source-candidate | ARCHIVED | Git history; see governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md |
+| INV-025 | CR-VECTOR-001 CMP-050 AI Agent core migration | change-request | ARCHIVED | governance/change_requests/CR-VECTOR-001_CMP-050_AGENT_CORE_v0.1.md |
+| INV-026 | CR-VECTOR-001 vector migration validation report | validation-report | ARCHIVED | docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md + docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.2.md; image evidence retained in Git history |
+| INV-027 | V0.2 vector candidate validation render pipeline | ci-pipeline | ARCHIVED | Removed from active tree; Git history |
 | INV-028 | Agent mental model raster v0.3 legibility-recovery candidate | visual-artifact | SUPERSEDED | docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png + docs/agents/AGENT_MENTAL_MODEL_v0.3_CANDIDATE.md |
 | INV-029 | V0.2 vs V0.3 baseline comparison and promotion-gate report | validation-report | COMPLETE | docs/agents/validation/AGENT_MENTAL_MODEL_V02_V03_BASELINE_COMPARISON_v0.1.md |
 | INV-030 | Agent mental model v0.3 controlled visual baseline | visual-artifact | ACTIVE | docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png + docs/agents/AGENT_MENTAL_MODEL_v0.3_BASELINE.md + docs/agents/assets/AGENT_MENTAL_MODEL_BASELINE.yaml |
 | INV-031 | Agent mental model v0.3 baseline promotion decision | governance-decision | ACTIVE | governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md |
 | INV-032 | V0.3 baseline normalization pipeline | ci-pipeline | ACTIVE | .github/workflows/normalize-agent-v03-baseline.yml |
+| INV-033 | V0.2 visual retirement record | governance-decision | ACTIVE | governance/AGENT_MENTAL_MODEL_V02_RETIREMENT_v0.1.md |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.
