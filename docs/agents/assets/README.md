@@ -130,3 +130,19 @@ Still open:
 - full editability of the robot icon;
 - full editability of the outer frame/glow;
 - canonical SVG promotion.
+
+### Validation render artifact
+
+The repository stores the rendered PNG evidence for candidate v0.3 at:
+
+`docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png`
+
+Verified resolution:
+
+```text
+2048 × 1364
+```
+
+It is regenerated from the versioned SVG candidate by:
+
+`.github/workflows/render-vector-candidate-validation.yml`
