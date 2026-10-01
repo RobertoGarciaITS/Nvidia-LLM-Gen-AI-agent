@@ -1,0 +1,36 @@
+schema_version: "0.1"
+
+current_visual_baseline:
+  version: "v0.3"
+  status: ACTIVE
+  file: "AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png"
+  resolution:
+    width: 1536
+    height: 1023
+  profile:
+    base_width: 512
+    base_height: 341
+    scale: 3
+  promotion_type: CONTROLLED_REBASELINE
+  previous_baseline:
+    version: "v0.2"
+    file: "AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+  source_candidate:
+    file: "AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png"
+    resolution: "1537x1023"
+  normalization:
+    operation: "crop_right_edge"
+    pixels_removed: 1
+    retained_region_pixel_error: 0
+    removed_edge_mean: 0.103386
+  validation:
+    legibility: PASS
+    semantic_model: PASS
+    architecture_topology: PASS
+    component_coverage: PASS
+    aspect_ratio: PASS
+    strict_v02_pixel_lineage: NOT_CLAIMED
+  governance:
+    promotion_record: "governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md"
+    semantic_contract: "governance/AGENT_MENTAL_MODEL_CONTRACT_v0.1.md"
+    resolution_standard: "governance/VISUAL_RESOLUTION_STANDARD_v0.1.md"

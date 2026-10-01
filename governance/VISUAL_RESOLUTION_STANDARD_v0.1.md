@@ -148,3 +148,30 @@ Generation is automated by:
 The workflow uses explicit deterministic Lanczos scaling for the 2× and 4× raster renditions and validates exact dimensions before committing outputs.
 
 The current master files are **recommended master raster renditions**, not native high-resolution sources. Their lineage remains the 512 × 341 canonical raster baseline until an approved editable/vector source is introduced.
+
+## 11. v0.3 controlled baseline
+
+The active visual baseline is now:
+
+`AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png`
+
+Its resolution is an exact 3× profile:
+
+```text
+512 × 341 × 3 = 1536 × 1023
+```
+
+This profile is valid alongside the existing preview/documentation/master profiles.
+
+| Profile | Resolution | Role |
+|---|---:|---|
+| Preview | 512 × 341 | lightweight preview |
+| Documentation | 1024 × 682 | docs/PDF/presentations |
+| Controlled baseline v0.3 | 1536 × 1023 | active human-readable visual baseline |
+| Master raster profile | 2048 × 1364 | 4× raster export profile |
+
+The v0.3 baseline was produced through a controlled re-baseline decision and a deterministic one-pixel right-edge normalization from the validated 1537 × 1023 legibility candidate. The retained region has zero pixel error.
+
+The previous rule prohibiting crop remains the default for strict derivatives. The one-pixel crop used for baseline normalization is an explicitly authorized exception documented in:
+
+`governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md`

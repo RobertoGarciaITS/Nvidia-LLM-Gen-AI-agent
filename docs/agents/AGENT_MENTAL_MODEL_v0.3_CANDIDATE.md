@@ -2,7 +2,7 @@
 
 **ID:** NVIDIA-AGENT-MENTAL-MODEL-RASTER-CANDIDATE-003  
 **Version:** 0.3  
-**Status:** DRAFT / VALIDATION COMPLETE / PROMOTION BLOCKED  
+**Status:** SUPERSEDED BY CONTROLLED BASELINE v0.3  
 **Purpose:** Recover diagram legibility after the raster/vector migration experiment reduced practical readability.
 
 ## 1. Artifact
@@ -95,7 +95,7 @@ Before v0.3 can become the controlled baseline:
 
 ## 7. Current decision
 
-> Validation is complete. Preserve v0.2 as the controlled baseline and retain v0.3 as the preferred legibility candidate. Promotion is blocked only by strict aspect-ratio and lineage requirements.
+> Validation is complete. This 1537 × 1023 candidate has been normalized and promoted through a controlled re-baseline decision. The active baseline is now `AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png`.
 
 
 ## 8. Validation result
@@ -116,3 +116,20 @@ BASELINE PROMOTION         = BLOCKED
 ~~~
 
 The candidate is now the preferred review image for readability, while V0.2 remains the controlled baseline.
+
+
+## 9. Promotion outcome
+
+This candidate is retained as source/provenance evidence and is superseded for active baseline use by:
+
+`docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png`
+
+Promotion type:
+
+```text
+CONTROLLED_REBASELINE
+```
+
+See:
+
+`governance/AGENT_MENTAL_MODEL_BASELINE_PROMOTION_v0.3.md`
