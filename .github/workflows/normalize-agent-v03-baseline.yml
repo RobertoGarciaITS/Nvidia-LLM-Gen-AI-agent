@@ -1,0 +1,82 @@
+name: Normalize v0.3 mental model baseline candidate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/normalize-agent-v03-baseline.yml"
+      - "docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png"
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: |
+          if ! command -v magick >/dev/null 2>&1 && ! command -v convert >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y imagemagick
+          fi
+
+      - name: Normalize exact baseline profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png"
+          dst="docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png"
+          ref="/tmp/v03_ref_1536x1023.png"
+
+          test -s "$src"
+          src_dims="$(identify -format '%wx%h' "$src")"
+          echo "source dimensions: $src_dims"
+          test "$src_dims" = "1537x1023"
+
+          # Authorized normalization delta:
+          # remove exactly one pixel from the far-right outer margin.
+          if command -v magick >/dev/null 2>&1; then
+            magick "$src" -crop 1536x1023+0+0 +repage "$dst"
+            magick "$src" -crop 1536x1023+0+0 +repage "$ref"
+          else
+            convert "$src" -crop 1536x1023+0+0 +repage "$dst"
+            convert "$src" -crop 1536x1023+0+0 +repage "$ref"
+          fi
+
+          dst_dims="$(identify -format '%wx%h' "$dst")"
+          echo "baseline dimensions: $dst_dims"
+          test "$dst_dims" = "1536x1023"
+
+          # Pixel identity gate: the retained 1536x1023 region must be identical.
+          ae="$(compare -metric AE "$ref" "$dst" null: 2>&1 || true)"
+          echo "retained-region absolute pixel error: $ae"
+          test "$ae" = "0"
+
+          # Diagnostic only: characterize removed one-pixel outer column.
+          if command -v magick >/dev/null 2>&1; then
+            edge_mean="$(magick "$src" -crop 1x1023+1536+0 +repage -format '%[fx:mean]' info:)"
+          else
+            edge_mean="$(convert "$src" -crop 1x1023+1536+0 +repage -format '%[fx:mean]' info:)"
+          fi
+          echo "removed right-edge normalized mean: $edge_mean"
+
+      - name: Commit normalized baseline candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_baseline_1536x1023.png
+
+          if git diff --cached --quiet; then
+            echo "Normalized baseline candidate is already current."
+            exit 0
+          fi
+
+          git commit -m "docs: add normalized v0.3 baseline candidate"
+          git push
