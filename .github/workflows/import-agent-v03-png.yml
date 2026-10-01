@@ -1,0 +1,72 @@
+name: Import legible agent mental model v0.3 candidate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/import-agent-v03-png.yml"
+      - ".tmp/agent_v03/AGENT_MENTAL_MODEL_v0.3_transfer_q95.webp"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: |
+          if ! command -v magick >/dev/null 2>&1 && ! command -v convert >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y imagemagick
+          fi
+
+      - name: Verify transfer source
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=".tmp/agent_v03/AGENT_MENTAL_MODEL_v0.3_transfer_q95.webp"
+          test -s "$src"
+          echo "c94628402b9d347daaacff982e66843b8994da44ecf4750b60b135428d6834c3  $src" | sha256sum -c -
+          actual="$(identify -format '%wx%h' "$src")"
+          echo "transfer dimensions: $actual"
+          test "$actual" = "1537x1023"
+
+      - name: Convert transfer source to PNG
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=".tmp/agent_v03/AGENT_MENTAL_MODEL_v0.3_transfer_q95.webp"
+          dst="docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png"
+
+          if command -v magick >/dev/null 2>&1; then
+            magick "$src" -strip "$dst"
+          else
+            convert "$src" -strip "$dst"
+          fi
+
+          test -s "$dst"
+          format="$(identify -format '%m' "$dst")"
+          dims="$(identify -format '%wx%h' "$dst")"
+          echo "final format: $format"
+          echo "final dimensions: $dims"
+          test "$format" = "PNG"
+          test "$dims" = "1537x1023"
+
+      - name: Commit final PNG and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png
+          git rm .tmp/agent_v03/AGENT_MENTAL_MODEL_v0.3_transfer_q95.webp
+          git rm .github/workflows/import-agent-v03-png.yml
+
+          git commit -m "docs: add legible v0.3 raster candidate"
+          git push
