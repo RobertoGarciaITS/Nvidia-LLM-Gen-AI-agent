@@ -146,3 +146,23 @@ Verified resolution:
 It is regenerated from the versioned SVG candidate by:
 
 `.github/workflows/render-vector-candidate-validation.yml`
+
+## Raster v0.3 legibility-recovery candidate
+
+A new high-legibility raster candidate is stored at:
+
+`AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png`
+
+Verified properties:
+
+```text
+PNG
+1537 × 1023
+DRAFT / candidate
+```
+
+This file does **not** replace the controlled v0.2 baseline yet. Its strict image-to-image lineage is not proven by generation metadata, so it requires visual and semantic validation before any baseline promotion.
+
+Normative candidate record:
+
+`docs/agents/AGENT_MENTAL_MODEL_v0.3_CANDIDATE.md`
