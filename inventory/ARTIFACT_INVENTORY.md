@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.5  
+**Version:** 0.6  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -31,6 +31,7 @@
 | INV-018 | Agent mental model visual + explanation | learning-artifact | DRAFT | docs/agents/AGENT_MENTAL_MODEL_v0.1.md + assets/AGENT_MENTAL_MODEL_v0.1.webp + assets/AGENT_MENTAL_MODEL_v0.1.png |
 | INV-019 | Strict baseline image V2 execution contract | governance-contract | ACTIVE | governance/STRICT_BASELINE_IMAGE_V2_EXECUTION_CONTRACT_v0.1.md |
 | INV-020 | Agent mental model visual v0.2 — strict derivative of v0.1 | visual-artifact | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.webp + docs/agents/assets/AGENT_MENTAL_MODEL_v0.2.png |
+| INV-021 | Visual resolution standard | governance-standard | ACTIVE | governance/VISUAL_RESOLUTION_STANDARD_v0.1.md + docs/agents/assets/README.md |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.

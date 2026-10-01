@@ -633,3 +633,19 @@ This distinction is the foundation for future labs on sandbox design, agent cont
 ## 14. Status and validation note
 
 This artifact is **DRAFT** because it preserves and structures the current project mental model. Promotion to **VALIDATED** requires explicit comparison against current official documentation and evidence for any product-specific behavior.
+## 15. Visual resolution profile
+
+The current V1 and V2 PNG/WebP visual assets are verified at **512 × 341 px**. This is the current raster baseline and preview resolution.
+
+The project resolution recommendation is:
+
+| Profile | Resolution | Use |
+|---|---:|---|
+| Preview | 512 × 341 | GitHub/web lightweight preview |
+| Documentation | 1024 × 682 | Docs, PDF and presentations |
+| Master PNG | 2048 × 1364 | High-resolution canonical raster target |
+
+The aspect ratio is locked. Cropping, stretching and generative reinterpretation are not permitted as resolution-conversion methods. Because the current raster baseline is only 512 × 341, deterministic upscaling preserves design but does not add true source detail. A future true master should preferably be rendered natively from an approved editable/vector source.
+
+Normative reference: `governance/VISUAL_RESOLUTION_STANDARD_v0.1.md`.
+
