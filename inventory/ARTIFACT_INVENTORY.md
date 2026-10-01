@@ -1,7 +1,7 @@
 # Artifact Inventory
 
 **Registry ID:** NVIDIA-ARTIFACT-REGISTRY-001  
-**Version:** 0.12  
+**Version:** 0.13  
 **Status:** ACTIVE
 
 ## Status vocabulary
@@ -39,6 +39,7 @@
 | INV-026 | CR-VECTOR-001 vector migration validation report | validation-report | DRAFT | docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md + docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.2.md + docs/agents/validation/images/AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3_render.png |
 | INV-027 | Vector candidate validation render pipeline | ci-pipeline | ACTIVE | .github/workflows/render-vector-candidate-validation.yml |
 | INV-028 | Agent mental model raster v0.3 legibility-recovery candidate | visual-artifact | DRAFT | docs/agents/assets/AGENT_MENTAL_MODEL_v0.3_candidate_1537x1023.png + docs/agents/AGENT_MENTAL_MODEL_v0.3_CANDIDATE.md |
+| INV-029 | V0.2 vs V0.3 baseline comparison and promotion-gate report | validation-report | COMPLETE | docs/agents/validation/AGENT_MENTAL_MODEL_V02_V03_BASELINE_COMPARISON_v0.1.md |
 
 ## Historical knowledge migration queue
 Prior project conversations contain work on NemoClaw/OpenClaw, 01a loop, agent workflow anatomy, lesson prompt templates, NVIDIA/ADK comparisons, Colab constraints, first-agent research and RAG. These items must be migrated by reviewing their original source and conversation evidence rather than reconstructed from memory.

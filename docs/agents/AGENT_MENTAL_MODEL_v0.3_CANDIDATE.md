@@ -2,7 +2,7 @@
 
 **ID:** NVIDIA-AGENT-MENTAL-MODEL-RASTER-CANDIDATE-003  
 **Version:** 0.3  
-**Status:** DRAFT  
+**Status:** DRAFT / VALIDATION COMPLETE / PROMOTION BLOCKED  
 **Purpose:** Recover diagram legibility after the raster/vector migration experiment reduced practical readability.
 
 ## 1. Artifact
@@ -84,15 +84,35 @@ The final PNG is therefore a high-quality transcoded representation of the gener
 Before v0.3 can become the controlled baseline:
 
 ```text
-[ ] Visual review against v0.2
-[ ] Semantic labels and relationships validated
-[ ] Text legibility accepted at normal viewing size
-[ ] No required component missing
-[ ] Architecture topology validated
-[ ] Strict/controlled lineage decision documented
-[ ] Explicit baseline promotion decision
+[x] Visual review against v0.2
+[x] Semantic labels and relationships validated
+[x] Text legibility accepted at normal viewing size
+[x] No required component missing
+[x] Architecture topology validated
+[x] Strict/controlled lineage decision documented — NOT VERIFIED
+[ ] Explicit baseline promotion decision — BLOCKED
 ```
 
 ## 7. Current decision
 
-> Preserve v0.2 as the controlled baseline and retain v0.3 as the legibility-recovery candidate until validation is complete.
+> Validation is complete. Preserve v0.2 as the controlled baseline and retain v0.3 as the preferred legibility candidate. Promotion is blocked only by strict aspect-ratio and lineage requirements.
+
+
+## 8. Validation result
+
+Formal comparison:
+
+`docs/agents/validation/AGENT_MENTAL_MODEL_V02_V03_BASELINE_COMPARISON_v0.1.md`
+
+~~~text
+LEGIBILITY                 = PASS
+SEMANTIC MODEL             = PASS
+ARCHITECTURE TOPOLOGY      = PASS
+COMPONENT COVERAGE         = PASS
+VISUAL STRUCTURE           = PASS_WITH_VARIANCE
+STRICT ASPECT RATIO        = FAIL
+STRICT BASELINE LINEAGE    = NOT VERIFIED
+BASELINE PROMOTION         = BLOCKED
+~~~
+
+The candidate is now the preferred review image for readability, while V0.2 remains the controlled baseline.
