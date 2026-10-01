@@ -1,0 +1,81 @@
+schema_version: "0.1"
+
+artifact:
+  id: NVIDIA-AGENT-MENTAL-MODEL-VECTOR-SOURCE-CANDIDATE-001
+  version: v0.1
+  status: DRAFT
+  canonical_editable_source: false
+
+baseline:
+  mental_model_version: v0.2
+  raster_master: AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png
+  resolution:
+    width: 2048
+    height: 1364
+  aspect_ratio_policy: LOCKED
+
+candidate:
+  file: AGENT_MENTAL_MODEL_v0.2_source_candidate.svg
+  mode: RASTER_ANCHORED_SVG
+  canvas:
+    width: 2048
+    height: 1364
+  visible_source_layer:
+    id: L-000-baseline-raster
+    status: LOCKED
+  editable_vector_layer:
+    id: L-100-editable-vector
+    status: PLANNED
+    initially_visible: false
+
+contracts:
+  semantic: NVIDIA-AGENT-MENTAL-MODEL-CONTRACT-001
+  strict_derivation: NVIDIA-VISUAL-V2-EXECUTION-CONTRACT-001
+  vector_migration: NVIDIA-VECTOR-SOURCE-MIGRATION-CONTRACT-001
+  resolution: NVIDIA-VISUAL-RESOLUTION-STANDARD-001
+
+component_groups:
+  - id: CMP-010
+    name: header
+    status: PLANNED
+  - id: CMP-020
+    name: observability
+    status: PLANNED
+  - id: CMP-030
+    name: nemoclaw_boundary
+    status: PLANNED
+  - id: CMP-040
+    name: openshell_boundary
+    status: PLANNED
+  - id: CMP-050
+    name: agent_core
+    status: PLANNED
+  - id: CMP-060
+    name: tools
+    status: PLANNED
+  - id: CMP-070
+    name: memory
+    status: PLANNED
+  - id: CMP-080
+    name: inference_routing
+    status: PLANNED
+  - id: CMP-090
+    name: provider_models
+    status: PLANNED
+  - id: CMP-100
+    name: execution_flow
+    status: PLANNED
+  - id: CMP-110
+    name: responsibilities
+    status: PLANNED
+  - id: CMP-120
+    name: benefits
+    status: PLANNED
+
+promotion:
+  required_gates:
+    - structural_regression
+    - visual_regression
+    - semantic_regression
+    - editability
+  current_decision: NOT_CANONICAL

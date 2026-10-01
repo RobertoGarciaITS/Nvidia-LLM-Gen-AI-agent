@@ -56,3 +56,34 @@ The workflow rebuilds the PNG profiles from the canonical WebP assets and reject
 Normative reference:
 
 `governance/VISUAL_RESOLUTION_STANDARD_v0.1.md`
+
+## Vector source migration
+
+A controlled SVG migration has started:
+
+AGENT_MENTAL_MODEL_v0.2_source_candidate.svg
+
+Current state:
+
+~~~text
+V2 MASTER PNG 2048×1364
+        │
+        ▼
+RASTER-ANCHORED SVG CANDIDATE
+        │
+        ▼
+incremental component migration
+        │
+        ▼
+visual + semantic + editability gates
+        │
+        ▼
+future canonical editable SVG
+~~~
+
+The candidate currently preserves the master PNG as the visible 1:1 anchor and contains stable planned component groups. It is not yet a fully vectorized or canonical editable source.
+
+See:
+
+- governance/VECTOR_SOURCE_MIGRATION_CONTRACT_v0.1.md
+- AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.1.yaml
