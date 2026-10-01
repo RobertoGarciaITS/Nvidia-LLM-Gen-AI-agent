@@ -105,3 +105,28 @@ Files:
 - AGENT_MENTAL_MODEL_VECTOR_SOURCE_MANIFEST_v0.2.yaml
 - governance/change_requests/CR-VECTOR-001_CMP-050_AGENT_CORE_v0.1.md
 - docs/agents/validation/VECTOR_MIGRATION_CR-VECTOR-001_REPORT_v0.1.md
+
+#### Candidate v0.3 refinement
+
+AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.3.svg refines CR-VECTOR-001.
+
+Results:
+
+~~~text
+Full MAE              1.7137 -> 1.1099
+CMP-050 MAE          21.2375 -> 15.1854
+Outside CMP-050 MAE   0.1743 -> 0.0000
+~~~
+
+Closed gates:
+
+- canvas / aspect ratio;
+- scope containment;
+- semantic text lock;
+- visual fidelity with documented raster-texture variance.
+
+Still open:
+
+- full editability of the robot icon;
+- full editability of the outer frame/glow;
+- canonical SVG promotion.

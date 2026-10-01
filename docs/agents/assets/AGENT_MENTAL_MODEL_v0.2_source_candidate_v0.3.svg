@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="2048" height="1364" viewBox="0 0 2048 1364" version="1.1">
+  <title>Agent Mental Model v0.2 — SVG Source Candidate v0.3</title>
+  <desc>CMP-050 AI Agent core refinement. Raster remains exact outside the authorized CMP-050 interior.</desc>
+  <metadata id="META-001">artifact_id=NVIDIA-AGENT-MENTAL-MODEL-VECTOR-SOURCE-CANDIDATE-001;candidate_version=v0.3;baseline_model=v0.2;canvas=2048x1364;canonical=false;migration=CR-VECTOR-001;</metadata>
+
+  <defs>
+    <mask id="MASK-BASELINE-EXCEPT-CMP050-INNER" maskUnits="userSpaceOnUse" x="0" y="0" width="2048" height="1364">
+      <rect x="0" y="0" width="2048" height="1364" fill="white"/>
+      <rect x="365" y="508" width="690" height="246" rx="8" ry="8" fill="black"/>
+    </mask>
+    <clipPath id="CLIP-ROBOT-ICON" clipPathUnits="userSpaceOnUse">
+      <rect x="365" y="508" width="105" height="112" rx="8" ry="8"/>
+    </clipPath>
+    <filter id="FX-TEXT-SOFT" x="-10%" y="-20%" width="120%" height="140%">
+      <feGaussianBlur stdDeviation="0.65"/>
+    </filter>
+    <filter id="FX-CARD-SOFT" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="0.30"/>
+    </filter>
+  </defs>
+
+  <g id="L-000-baseline-raster" data-status="LOCKED">
+    <image id="IMG-BASELINE-V02" x="0" y="0" width="2048" height="1364" preserveAspectRatio="xMidYMid meet"
+      href="AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+      xlink:href="AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+      mask="url(#MASK-BASELINE-EXCEPT-CMP050-INNER)"/>
+  </g>
+
+  <g id="L-100-editable-vector" data-status="PARTIAL">
+    <g id="CMP-050-agent-core" data-status="MIGRATED_PARTIAL" font-family="Arial, Helvetica, sans-serif">
+      <rect id="BOX-050-INNER-FILL" x="365" y="508" width="690" height="246" rx="8" ry="8" fill="#17105a"/>
+
+      <image id="ICON-050-ROBOT-RASTER" x="0" y="0" width="2048" height="1364"
+             preserveAspectRatio="xMidYMid meet"
+             href="AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+             xlink:href="AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png"
+             clip-path="url(#CLIP-ROBOT-ICON)"/>
+
+      <g id="TXT-050-GROUP" filter="url(#FX-TEXT-SOFT)">
+        <text id="TXT-050-001" x="478" y="531" font-size="24" font-weight="700" fill="#ded9ef">AI Agent</text>
+        <text id="TXT-050-002" x="478" y="563" font-size="16.5" font-weight="500" fill="#a69dcc">(Orquestador / Memoria / LangChain, Deep Agents)</text>
+        <text id="TXT-050-003" x="478" y="600" font-size="16.5" font-weight="600" fill="#bdb5da">Organiza la tarea, decide acciones, usa herramientas, memoria y</text>
+        <text id="TXT-050-004" x="478" y="624" font-size="16.5" font-weight="600" fill="#bdb5da">solicita inferencia cuando necesita razonar.</text>
+
+        <g id="BOX-050-PLAN">
+          <rect id="BOX-050-PLAN-BG" x="371" y="632" width="191" height="122" rx="14" ry="14"
+                fill="#161153" stroke="#322870" stroke-width="4" filter="url(#FX-CARD-SOFT)"/>
+          <text id="TXT-050-010" x="387" y="660" font-size="16.5" font-weight="700" fill="#ded9ef">Planificación</text>
+          <text id="TXT-050-011" x="389" y="687" font-size="14.5" fill="#b8afd5">• ReAct</text>
+          <text id="TXT-050-012" x="389" y="713" font-size="14.5" fill="#b8afd5">• Plan &amp; Execute</text>
+          <text id="TXT-050-013" x="389" y="739" font-size="14.5" fill="#b8afd5">• Tool Use</text>
+        </g>
+
+        <g id="BOX-050-STATE">
+          <rect id="BOX-050-STATE-BG" x="574" y="632" width="244" height="122" rx="14" ry="14"
+                fill="#161153" stroke="#322870" stroke-width="4" filter="url(#FX-CARD-SOFT)"/>
+          <text id="TXT-050-020" x="592" y="660" font-size="16.5" font-weight="700" fill="#ded9ef">Estado</text>
+          <text id="TXT-050-021" x="592" y="687" font-size="14.5" fill="#b8afd5">• Memoria de sesión</text>
+          <text id="TXT-050-022" x="592" y="713" font-size="14.5" fill="#b8afd5">• Memoria de largo plazo</text>
+          <text id="TXT-050-023" x="592" y="739" font-size="14.5" fill="#b8afd5">• Contexto</text>
+        </g>
+
+        <g id="BOX-050-TOOLS">
+          <rect id="BOX-050-TOOLS-BG" x="830" y="632" width="214" height="122" rx="14" ry="14"
+                fill="#161153" stroke="#322870" stroke-width="4" filter="url(#FX-CARD-SOFT)"/>
+          <text id="TXT-050-030" x="849" y="660" font-size="16.5" font-weight="700" fill="#ded9ef">Herramientas (Tools)</text>
+          <text id="TXT-050-031" x="849" y="683" font-size="14" fill="#b8afd5">• APIs</text>
+          <text id="TXT-050-032" x="849" y="704" font-size="14" fill="#b8afd5">• Código</text>
+          <text id="TXT-050-033" x="849" y="725" font-size="14" fill="#b8afd5">• Navegador</text>
+          <text id="TXT-050-034" x="849" y="746" font-size="14" fill="#b8afd5">• MCP Tools</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

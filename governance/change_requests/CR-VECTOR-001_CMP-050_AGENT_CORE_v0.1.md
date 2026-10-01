@@ -2,7 +2,7 @@
 
 **ID:** CR-VECTOR-001  
 **Version:** 0.1  
-**Status:** IMPLEMENTED / REVIEW_REQUIRED  
+**Status:** IMPLEMENTED / PARTIALLY VALIDATED  
 **Baseline:** AGENT_MENTAL_MODEL_v0.2_master_2048x1364.png  
 **Candidate:** AGENT_MENTAL_MODEL_v0.2_source_candidate_v0.2.svg
 
@@ -60,3 +60,28 @@ The robot icon remains raster-preserved as ICON-050-ROBOT-RASTER.
 ## Decision
 
 The change request is technically implemented, but acceptance remains REVIEW_REQUIRED because visual and semantic regression gates have not yet been fully passed.
+
+## Refinement v0.3
+
+Candidate v0.3 narrows the raster mask to the CMP-050 interior so the original outer frame and glow remain unchanged. It also corrects the subtitle text lock and refines colors, typography, blur and card geometry.
+
+Measured improvement versus candidate v0.2:
+
+| Metric | v0.2 | v0.3 | Improvement |
+|---|---:|---:|---:|
+| Full image MAE | 1.7137 | 1.1099 | 35.2363% lower |
+| CMP-050 MAE | 21.2375 | 15.1854 | 28.4972% lower |
+| Outside CMP-050 MAE | 0.1743 | 0.0000 | exact containment |
+
+Gate state:
+
+~~~text
+CANVAS / ASPECT RATIO = PASS
+SCOPE CONTAINMENT     = PASS
+SEMANTIC / TEXT LOCK  = PASS
+VISUAL FIDELITY       = PASS_WITH_RASTER_TEXTURE_VARIANCE
+EDITABILITY           = PARTIAL_PASS
+CANONICAL SOURCE      = NOT READY
+~~~
+
+The remaining editability blockers are the raster-preserved robot icon and outer frame/glow.
