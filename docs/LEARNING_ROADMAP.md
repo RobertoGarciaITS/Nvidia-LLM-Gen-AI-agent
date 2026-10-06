@@ -11,6 +11,11 @@ LLM basics; prompt/context/tool/memory; inference vs training; tokens/context/sa
 ## Phase 1 — NVIDIA ecosystem
 NVIDIA NIM; NeMo ecosystem; NeMoClaw/OpenClaw; model endpoints; guardrails; RAG; observability.
 
+### Active official learning path
+- **NVIDIA Agentic AI Learning Path** — https://developer.nvidia.com/topics/ai/agentic-ai-learning-path
+- Canonical source registry entry: `SRC-006` in `references/SOURCE_REGISTRY.md`.
+- Use the learning path as the active course-discovery and sequencing reference; convert completed study into repository notes, labs, tests and evidence using the canonical cycle `SOURCE → LEARN → DOCUMENT → LAB → TEST → EVIDENCE → REVIEW → INVENTORY`.
+
 **Exit:** explain the role and boundaries of each major component.
 
 ## Phase 2 — Agent configuration
